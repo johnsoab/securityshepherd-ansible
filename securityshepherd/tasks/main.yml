@@ -124,22 +124,18 @@
 
 - name: Import Core SS Schema
   command: "mysql -u root --password={{ mysql_root_pass }} -e 'source {{ mysql_core_schema }}' --force"
-  notify: restart mariadb
   when: ss_reset_core_database
-    - web.xml
   notify: restart tomcat
 
 - name: Import Mobile SS Schema
   command: "mysql -u root --password={{ mysql_root_pass }} -e 'source {{ mysql_module_schema }}' --force"
-  notify: restart mariadb
   when: ss_reset_module_database
-    - web.xml
   notify: restart tomcat
 
 - name: Check if Keystore Exists with tomcat alias
   command: 'keytool -list -alias tomcat -keystore {{ tomcat_keystore_file }}  -storepass {{ tomcat_keystore_pass }}'
   ignore_errors: true
-  changed: false
+  changed_when: false
   register: keystore_results
 
 - name: Generate self-signed certs

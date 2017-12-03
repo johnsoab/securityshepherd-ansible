@@ -1,6 +1,6 @@
 ---
 - name: Playbook for deploying SS CTF
-  hosts: testVM2
+  hosts: testVM3
   roles:
     - securityshepherd
   tasks:
