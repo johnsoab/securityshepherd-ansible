@@ -1,0 +1,17 @@
+---
+# defaults file for securityshepherd
+tomcat_keystore_file: "/etc/tomcat/shepherd.jks"
+tomcat_keystore_pass: "shepherd"
+tomcat_https_port: "8443"
+tomcat_http_port: "8080"
+tomcat_config_path: "/etc/tomcat"
+tomcat_webapp_path: "/var/lib/tomcat/webapps/"
+ss_hostname: "testVM2"
+https_port: "443"
+http_port: "80"
+mysql_root_pass: "CowSaysMoo"
+securityshepherd_admin_pass: "ReallyComplexPassword17"
+mysql_core_schema: "/tmp/coreSchema.sql"
+mysql_module_schema: "/tmp/moduleSchemas.sql"
+ss_reset_core_database: true
+ss_reset_module_database: true

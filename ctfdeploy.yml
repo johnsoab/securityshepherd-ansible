@@ -1,0 +1,10 @@
+---
+- name: Playbook for deploying SS CTF
+  hosts: testVM2
+  roles:
+    - securityshepherd
+  tasks:
+    - name: upgrade all packages
+      yum:
+        name: '*'
+        state: latest
