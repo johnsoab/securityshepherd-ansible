@@ -1,6 +1,6 @@
 ---
 - name: Playbook for deploying SS CTF
-  hosts: testVM3
+  hosts: ctfsrv10101.eastus.cloudapp.azure.com
   roles:
     - securityshepherd
   tasks:
